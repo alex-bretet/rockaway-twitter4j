@@ -189,7 +189,8 @@ class TwitterImpl extends TwitterBaseImpl implements Twitter
 	public ResponseList<Status> getUserTimeline(String screenName, Paging paging) throws TwitterException
 	{
 		return factory.createStatusList(get(conf.getRestBaseURL() + "statuses/user_timeline.json", mergeParameters(
-				new HttpParameter[] { new HttpParameter("screen_name", screenName), INCLUDE_MY_RETWEET }, paging
+				new HttpParameter[] { new HttpParameter("screen_name", screenName),
+						new HttpParameter("contributor_details ", "true"), INCLUDE_MY_RETWEET }, paging
 						.asPostParameterArray())));
 	}
 
@@ -200,7 +201,8 @@ class TwitterImpl extends TwitterBaseImpl implements Twitter
 	public ResponseList<Status> getUserTimeline(long userId, Paging paging) throws TwitterException
 	{
 		return factory.createStatusList(get(conf.getRestBaseURL() + "statuses/user_timeline.json", mergeParameters(
-				new HttpParameter[] { new HttpParameter("user_id", userId), INCLUDE_MY_RETWEET }, paging
+				new HttpParameter[] { new HttpParameter("user_id", userId),
+						new HttpParameter("contributor_details ", "true"), INCLUDE_MY_RETWEET }, paging
 						.asPostParameterArray())));
 	}
 
