@@ -5,6 +5,8 @@
     <name>rockaway-twitter4j</name>
     <description>A Java library for the Twitter API</description>
     <url>http://twitter4j.org/</url>
+	<groupId>com.rockaway</groupId>
+	<version>0.1</version>
     <licenses>
         <license>
             <name>Apache License 2.0</name>
